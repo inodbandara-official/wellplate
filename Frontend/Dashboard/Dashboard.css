@@ -46,6 +46,16 @@ h1{
     letter-spacing: 2px;
   }
 
+.sidebar header #btn{
+    position: absolute;
+    top: 2%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 23px;
+    text-align: center;
+    cursor: pointer;
+    transition: all .5s ease;
+}
 .sidebar .menu{
     width: 100%;
     margin-top: 30px;
