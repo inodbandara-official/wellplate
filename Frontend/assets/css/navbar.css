@@ -9,10 +9,6 @@
   --color-red:#9e0303;
 }
 
-
-
-
-
 *{
   padding: 0%;
   margin: 0%;
@@ -277,18 +273,7 @@
   width: 50px;
   background: none;
 }
-/**/
-/* body {
-  margin: 0;
-  padding: 0;
-  background-image: url('../images/background.jpg') no-repeat; /* Replace with the path to your background image *
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-} */
 
-
-/**/
 .home-section{
   position: relative;
   padding-top: 20PX;

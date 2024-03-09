@@ -44,10 +44,53 @@ img {
 
 p {
     color: #ffffff;
-    font-size: 0.9em; /* Decrease paragraph font size */
+    font-size: 0.9em;
 }
 
-/* Add a bit of spacing between cards */
 .meal-card + .meal-card {
     margin-left: 20px;
 }
+
+.footer{
+    background-color: #004f83;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    padding-top: 20PX;
+    top:0;
+    width: 100%;
+    transition: all .5s ease;
+    z-index: 2;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer-logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer-logo i {
+    font-size: 24px;
+    margin-right: 5px;
+  }
+  
+  .footer-links a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 15px;
+    font-size: 14px;
+  }
+  
+  .footer-bottom {
+    margin-top: 15px;
+  }
+  
+  .footer-bottom p {
+    font-size: 12px;
+  }
