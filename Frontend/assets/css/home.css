@@ -1,0 +1,109 @@
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+header {
+    width: 100%;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+img {
+    width: 15%;
+    height: 15%;
+    border-radius: 10px;
+}
+
+.logo img {
+    max-width: 10000px;
+    height: auto;
+}
+
+h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+h1,
+.info {
+    color: #ffffff;
+}
+
+button {
+    background-color: #3498db;
+    color: #ecf0f1;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.Access {
+    position: absolute;
+    top: 20px; /* Adjust the top position as needed */
+    right: 20px; /* Adjust the right position as needed */
+    color: inherit;
+    margin-top: 15px;
+}
+
+.Access-btn1,
+.Access-btn2 {
+    background-color: #2ecc71;
+    border-radius: 50px;
+    margin-left: 10px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.Access-btn1 a,
+.Access-btn2 a {
+    text-decoration: none;
+    color: inherit; /* Add this line to inherit the color from the parent */
+}
+
+.Access-btn1:hover, .Access-btn2:hover {
+    background-color: #27ae60;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.start {
+    background-color: #2c3e50;
+    border: none;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 80%;
+    left: 20%;
+    padding: 15px 30px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 50px;
+}
+
+
+
+/**/
+
+
+
+
