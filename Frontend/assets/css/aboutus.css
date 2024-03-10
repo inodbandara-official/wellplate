@@ -1,0 +1,128 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background: url('../assets/images/background.jpg') no-repeat; */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .logo img{
+    height: 100px;
+    width: 100px;
+  }
+  
+  .creator-section {
+    text-align: center;
+    padding: 20px;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  }
+  
+  .creator-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .creator {
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s, background-color 0.3s;
+  }
+
+  .creator:hover {
+    color: #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    background-color: #004f83; 
+  }
+
+  .creator:hover img {
+    border-radius: 10px;
+    transform: scale(1.05);
+    transition: transform 0.3s;
+  }
+
+  .creator:hover h2 {
+    color: #fff;
+  }
+  
+  .creator img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+  
+  .creator h2 {
+    color: #000;
+  }
+  
+  .footer{
+    background-color: #004f83;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    padding-top: 20PX;
+    top:0;
+    /* left:78px; */
+    width: 100%;
+    transition: all .5s ease;
+    z-index: 2;
+    bottom: 0;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer-logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer-logo i {
+    font-size: 24px;
+    margin-right: 5px;
+  }
+  
+  .footer-links a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 15px;
+    font-size: 14px;
+  }
+  
+  .footer-bottom {
+    margin-top: 15px;
+  }
+  
+  .footer-bottom p {
+    font-size: 12px;
+  }
