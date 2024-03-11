@@ -22,7 +22,7 @@ body {
     border: 2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(20px);
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-    color: #fff;
+    color: #000;
     border-radius: 10px;
     padding: 30px 40px;
 }
@@ -58,12 +58,13 @@ body {
     border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 40px;
     font-size: 16px;
-    color: #fff;
+    color: #000;
+    opacity: 0.75;
     padding: 20px 45px 20px 20px;
 }
 
 .input-box input::placeholder {
-    color: #fff;
+    color: #000;
 }
 
 .input-box i {
@@ -96,6 +97,10 @@ body {
     font-size: 14.5px;
     text-align: center;
     margin: 20px 0 15px;
+}
+
+.register-link p {
+    color: #fff;
 }
 
 .register-link p a {
