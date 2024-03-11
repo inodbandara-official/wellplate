@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <form action="login.php" method="post">
             <h1>Login</h1>
             <div class="input-box">
-                <input type="text" name="username" placeholder="Username" required>
+                <input type="email" name="email" placeholder="Email" required>
                 <i class='bx bxs-user'></i>
             </div>
             <div class="input-box">
