@@ -1,38 +1,33 @@
 <?php
-include 'connect.php'; // Include the database connection file
+include 'connect.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if form is submitted
 
     // Retrieve form data
-    $username = $_POST["username"];
+    $firstName = $_POST["first-name"];
+    $lastName = $_POST["last-name"];
+    $age = $_POST["age"];
+    $mobileNumber = $_POST["mobile-number"];
     $email = $_POST["email"];
     $password = $_POST["password"];
-    $confirmPassword = $_POST["confirm-password"];
-    $allergies = $_POST["allergies"];
-    $primaryDiet = $_POST["primary-diet"];
 
     // Validate and sanitize data (you should implement more robust validation)
-    $username = htmlspecialchars(trim($username));
+    $firstName = htmlspecialchars(trim($firstName));
+    $lastName = htmlspecialchars(trim($lastName));
+    $age = htmlspecialchars(trim($age));
+    $mobileNumber = htmlspecialchars(trim($mobileNumber));
     $email = filter_var($email, FILTER_SANITIZE_EMAIL);
     $password = htmlspecialchars(trim($password));
-    $confirmPassword = htmlspecialchars(trim($confirmPassword));
-    $allergies = htmlspecialchars(trim($allergies));
-    $primaryDiet = htmlspecialchars(trim($primaryDiet));
 
     // Perform additional validation and checks if needed
 
-    // Check if passwords match
-    if ($password != $confirmPassword) {
-        die("Error: Passwords do not match");
-    }
-
     // Insert user data into the database without hashing the password
-    $sql = "INSERT INTO users (Username, Email, Password, Allergies, Diet) 
-        VALUES ('$username', '$email', '$password', '$allergies', '$primaryDiet')";
+    $sql = "INSERT INTO users (First_Name, Last_Name, Age, Mobile_Number, Email, Password) 
+        VALUES ('$firstName', '$lastName', '$age', '$mobileNumber', '$email', '$password')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "SIGN IN SUCCESFULLY!";
+        echo "SIGN IN SUCCESSFULLY!";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -55,41 +50,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <form action="signup.php" method="post">
     <div class="form-group">
             <div class="input-box">
-                <input type="text" id="name" placeholder="First Name" required>
+                <input type="text" id="name" name="first-name" placeholder="First Name" required>
                 <i class='bx bxs-user'></i>
             </div>
         </div>
         <div class="form-group">
             <div class="input-box">
-                <input type="text" id="name" placeholder="Last Name" required>
+                <input type="text" id="name" name="last-name"  placeholder="Last Name" required>
                 <i class='bx bxs-user'></i>
             </div>
         </div>
 
         <div class="form-group">
         <div class="input-box">
-                <input type="number" id="age" placeholder="Age" required>
+                <input type="number" id="age" name="age" placeholder="Age" required>
                 <i class='bx bxs-smile'></i>
             </div>
         </div>
 
         <div class="form-group">
             <div class="input-box">
-                <input type="tel" id="mobile-number" placeholder="Mobile Number" required>
+                <input type="tel" id="mobile-number" name="mobile-number" placeholder="Mobile Number" required>
                 <i class='bx bxs-phone'></i>
             </div>
         </div>
         
         <div class="form-group">
             <div class="input-box">
-                <input type="email" id="email" placeholder="Email" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
                 <i class='bx bxs-envelope' ></i>
             </div>
         </div>
 
         <div class="form-group">
             <div class="input-box">
-                <input type="password" id="password" placeholder="Password" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
                 <i class='bx bxs-lock-alt' ></i>
             </div>
         </div>
