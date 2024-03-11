@@ -7,9 +7,23 @@
     <title>Well Plate</title>
 
     <style>
-        .footer {
-  background-color: var(--color-default);
-  color: var(--color-white);
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    flex: 1;
+}
+
+.footer {
+  background-color: #004f83;
+  color: #fff;
   padding: 20px;
   text-align: center;
 }
@@ -46,7 +60,7 @@
 }
     </style>
 </head>
-
+<section>
 <body background="./assets/images/back.jpg">
 
     <header>
@@ -71,21 +85,22 @@
 
 <button class="start" type="button" onclick="location.href='./pages/premadeplan.html'">Premade Meal Plans</button>
 
-<footer class="footer">
-    <div class="footer-content">
-      <div class="footer-logo">
-        <i class="bx xl-audible icon"></i>
-        <div class="logo_name">WELL PLATE</div>
-      </div>
-      <div class="footer-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Contact Us</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 Well Plate. All rights reserved.</p>
-    </div>
-  </footer>
+</section>
 </body>
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <i class="bx xl-audible icon"></i>
+      <div class="logo_name">WELL PLATE</div>
+    </div>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="./pages/aboutus.html">Contact Us</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 Well Plate. All rights reserved.</p>
+  </div>
+</footer>
 </html>
