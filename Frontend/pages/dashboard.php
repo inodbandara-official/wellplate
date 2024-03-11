@@ -9,7 +9,6 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/premade.css">
 
     <style>
-  
       body {
           margin: 0;
           padding: 0;
@@ -25,7 +24,7 @@
           backdrop-filter: blur(20px);
           background-color: rgba(255, 255, 255, 0.01);
       }
-      </style>
+    </style>
 </head>
 <body>
     <div class="sidebar">
@@ -65,7 +64,7 @@
             <span class="tooltip">Progress Tracker</span>
           </li>
           <li>
-            <a href="login.html">
+            <a href="login.php">
               <i class="bx bx-log-out"></i>
               <span class="link_name">Log Out</span>
             </a>
