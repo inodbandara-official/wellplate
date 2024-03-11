@@ -5,13 +5,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if form is submitted
 
     // Retrieve form data
-    $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
 
     // Use prepared statements to prevent SQL injection
-    $sql = "SELECT * FROM `users` WHERE `Username`=?";
+    $sql = "SELECT * FROM `users` WHERE `Email`=?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $username);
+    $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -23,8 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($password == $storedPassword) {
             // Password is correct
             // Perform additional actions, such as setting sessions, and redirecting the user
-            $_SESSION['user_username'] = $username;
-            header("location: ../pages/dashboard.php?username=$username");
+            $_SESSION['user_email'] = $row['Email'];
+            header("location: ../pages/dashboard.php?email=" . $row['Email']);
             exit();
         } else {
             // Incorrect password, display an alert and redirect to login.php
