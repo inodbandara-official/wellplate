@@ -73,7 +73,7 @@
         
           <li class="profile">
             <div class="profile_details">
-              <a href="profile.html">
+              <a href="profile.php">
               <img src="../assets/images/profile.jpg" alt="profile image">
               <div class="profile_content">
                 <div class="name">Inod Bandara</div>
