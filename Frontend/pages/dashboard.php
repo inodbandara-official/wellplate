@@ -36,7 +36,7 @@
 
         <ul class="nav-list">
           <li>
-            <a href="dashboard.html">
+            <a href="dashboard.php">
               <i class="bx bx-grid-alt"></i>
               <span class="link_name">Dashboard</span>
             </a>
