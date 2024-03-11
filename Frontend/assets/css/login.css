@@ -72,12 +72,12 @@ body {
 }
 
 .remember-forgot label input {
-    accent-color: #fff;
+    accent-color: #000;
     margin-right: 3px;
 }
 
 .remember-forgot a {
-    color: #fff;
+    color: #000;
     text-decoration: none;
 }
 
