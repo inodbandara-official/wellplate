@@ -43,7 +43,7 @@ body {
             <span class="tooltip">Dashboard</span>
           </li>
           <li>
-            <a href="generateMealPlan.html">
+            <a href="generateMealPlan.php">
               <i class='bx bx-cog'></i>
               <span class="link_name">Generate Meal Plan</span>
             </a>
