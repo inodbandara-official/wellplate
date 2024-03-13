@@ -81,7 +81,7 @@ if (isset($_SESSION['user_email'])) {
             <span class="tooltip">Generate Meal Plan</span>
           </li>
           <li>
-            <a href="viewMealPlan.html">
+            <a href="viewMealPlan.php">
               <i class="bx bx-folder"></i>
               <span class="link_name">View Meal Plan </span>
             </a>
