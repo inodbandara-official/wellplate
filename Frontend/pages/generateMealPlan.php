@@ -94,17 +94,19 @@ body {
         <input type="number" id="bloodSugarLevel" placeholder="Enter Blood Sugar Level" name="bloodSugarLevel" min="0" required>
     </div>
     <div class="input-group">
-        <label for="age">Age</label>
-        <select id="age" name="age" required>
-            <option value="">Select your age range</option>
-            <option value="60+">60+</option>
-            <option value="50-59">50-59</option>
-            <option value="40-49">40-49</option>
-            <option value="30-39">30-39</option>
-            <option value="20-29">20-29</option>
-            <option value="below 19">below 19</option>
-        </select>
+      <label for="age">Primary Diet</label>
+      <select id="age" name="age" required>
+          <option value="Vegetarian">Vegetarian</option>
+          <option value="Vegan">Vegan</option>
+      </select>
+  </div>
+
+    <div class="input-box">
+      <label for="allergies">Allergies</label>
+      <input type="text" id="allergies" placeholder="Enter the allergies you have" required/>
     </div>
+
+    
     <div class="input-group checkbox-container">
         <label class="checkbox-label">
             <input type="checkbox" id="cheatMeal" name="cheatMeal">
@@ -126,7 +128,7 @@ body {
     <div class="footer-links">
       <a href="#">Privacy Policy</a>
       <a href="#">Terms of Service</a>
-      <a href="aboutus.html">About Us</a>
+      <a href="#">Contact Us</a>
     </div>
   </div>
   <div class="footer-bottom">
