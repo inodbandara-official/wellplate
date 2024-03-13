@@ -27,7 +27,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         VALUES ('$firstName', '$lastName', '$age', '$mobileNumber', '$email', '$password')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "SIGN IN SUCCESSFULLY!";
+        echo '<script> 
+        alert("SIGN IN SUCCESSFULLY!");
+        window.location.href="login.php";
+    </script>';
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
