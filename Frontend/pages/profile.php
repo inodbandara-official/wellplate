@@ -19,6 +19,10 @@ if (isset($_SESSION['user_email'])) {
         // User found, retrieve the name
         $row = $result->fetch_assoc();
         $userName = $row['First_Name'] . ' ' . $row['Last_Name'];
+        $userEmail = $row['Email'];
+        $userAge = $row['Age'];
+        $userMobileNumber = $row['Mobile_Number'];
+        
     }
 } else {
     // Redirect to login if the user is not logged in
@@ -118,10 +122,9 @@ if (isset($_SESSION['user_email'])) {
         <img src="../assets/images/profile.jpg" alt="Profile Picture" class="profile-picture">
         <div class="user-info">
             <h1 class="username"><?php echo $userName; ?></h1>
-            <p class="email">E-mail: bandarainod@gmail.com</p>
-            <p class="age">Age: 22</p>
-            <p class="Diet">Primary Diet: None</p>
-            <p class="alergies">Allergies: None</p>
+            <p class="email">E-mail: <?php echo $userEmail; ?></p>
+            <p class="age">Age: 2<?php echo $userAge; ?></p>
+            <p class="Diet">Mobile Number: <?php echo $userMobileNumber; ?></p>
             <p class="status">Status: Active</p>
         </div>
     </div>
