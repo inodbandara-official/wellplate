@@ -16,7 +16,7 @@ if (isset($_SESSION['user_email'])) {
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        // User found, retrieve the name
+        // User found, retrieve details
         $row = $result->fetch_assoc();
         $userName = $row['First_Name'] . ' ' . $row['Last_Name'];
         $userEmail = $row['Email'];
