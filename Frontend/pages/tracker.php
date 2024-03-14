@@ -1,3 +1,28 @@
+<?php
+include 'connect.php';
+session_start();
+
+if (!isset($_SESSION['user_email'])) {
+    header("location: login.php");
+    exit();
+}
+
+$userEmail = $_SESSION['user_email'];
+$sql = "SELECT * FROM `users` WHERE `Email`=?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $userEmail);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $userName = $row['First_Name'] . ' ' . $row['Last_Name'];
+} else {
+    header("location: login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
