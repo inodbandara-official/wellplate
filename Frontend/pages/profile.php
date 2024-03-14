@@ -123,7 +123,7 @@ if (isset($_SESSION['user_email'])) {
         <div class="user-info">
             <h1 class="username"><?php echo $userName; ?></h1>
             <p class="email">E-mail: <?php echo $userEmail; ?></p>
-            <p class="age">Age: 2<?php echo $userAge; ?></p>
+            <p class="age">Age: <?php echo $userAge; ?></p>
             <p class="Diet">Mobile Number: <?php echo $userMobileNumber; ?></p>
             <p class="status">Status: Active</p>
         </div>
