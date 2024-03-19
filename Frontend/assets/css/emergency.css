@@ -1,0 +1,52 @@
+ /* Global styles */
+* {
+    box-sizing: border-box;
+}
+
+body { 
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Description section styles */
+#des {
+    word-spacing: 2px;
+    line-height: 1.6;
+    text-align: justify;
+    color: black;
+    margin-top: 5px;
+    padding: 2px 50px 50px;
+}
+
+#des h1 {
+    margin-top: 2px;
+    text-align: center;
+    color: navy;
+   
+}
+
+#contacts {
+    margin-left: 600px;
+    font-size: 20px;
+}
+
+/* Image styles */
+#image img {
+    height: 700px;
+    display: block;    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#content h1 {
+    font-size: 100px;
+    color: #165397;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#content h1:hover {
+    color: #000000;
+}
+  
