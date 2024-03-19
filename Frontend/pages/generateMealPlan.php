@@ -1,3 +1,32 @@
+<?php
+include 'connect.php';
+
+// Assume you have started the session
+session_start();
+
+// Check if the user is logged in
+if (isset($_SESSION['user_email'])) {
+    $userEmail = $_SESSION['user_email'];
+
+    // Use prepared statements to prevent SQL injection
+    $sql = "SELECT * FROM users WHERE Email=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $userEmail);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        // User found, retrieve the name
+        $row = $result->fetch_assoc();
+        $userName = $row['First_Name'] . ' ' . $row['Last_Name'];
+    }
+} else {
+    // Redirect to login if the user is not logged in
+    header("location: login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
