@@ -1,0 +1,33 @@
+h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.275rem;
+    color: #fff;
+}
+.content {
+    display: flex;
+    justify-content: center;
+    margin-right: 150px;
+}
+.card {
+    flex-basis: 35%;
+    background-color: #004f83;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+    overflow: hidden;
+    width: calc(35% - 1rem); /* Adjust as needed */
+    margin-right: 1rem; /* Adjust as needed */
+    margin-top: 20px;
+}
+.illustration {
+    background-color: #004f83;
+    color: #fff;
+    padding: 20px;
+}
+.illustration-img {
+    max-width: 150px;
+    width: 100%;
+}
+.card-body {
+    padding: 20px;
+}
