@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 import random
 from sklearn.metrics import accuracy_score
+import joblib
 
 df_food = pd.read_csv("C:\\Users\\Kamal\\PycharmProjects\\1 programme\\pred_food.csv")
 df_food['Glycemic Index'] = pd.to_numeric(df_food['Glycemic Index'], errors='coerce')
@@ -133,4 +134,6 @@ def get_recommendations(allergies=None, is_vegetarian=False, blood_sugar_level=N
                     print(f"    {food_name}")
 
 get_recommendations(allergies='Avacado', is_vegetarian=True, blood_sugar_level='100', cheat_day=True)
+
+joblib.dump(model, 'logistic_regression_model.joblib')
 
