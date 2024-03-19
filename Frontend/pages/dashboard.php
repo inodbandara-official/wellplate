@@ -32,6 +32,7 @@ if ($result->num_rows > 0) {
     <link rel="stylesheet" type="text/css" href="../assets/css/navbar.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="../assets/css/generateMealPlan.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
     <style>
         body {
             margin: 0;
