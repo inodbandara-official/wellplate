@@ -55,7 +55,20 @@ if ($result->num_rows > 0) {
     <?php include '../attachedSections/navbar.php'; ?>
 
     <section class="home-section">
-        Hi <?php echo $userName; ?>
+        <div class="content">
+            <div class="card illustration">
+                <div class="card-body">
+                    <h4>Welcome Back,<br> <?php echo $userName; ?></h4>
+                </div>
+            </div>       
+            <div class="card">
+                <div class="card-body">
+                    <h4>Blood Sugar Levels</h4>
+                    <p>Highest Recorded :</p>
+                    <p>Latest Recorded :</p>                   
+                </div>
+            </div>
+        </div>
     </section>
 
     <?php include '../attachedSections/footer.php'; ?>
