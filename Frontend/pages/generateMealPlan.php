@@ -59,7 +59,7 @@ body {
     <button id="generateBtn" disabled>GENERATE</button>
     <span id="message" class="message"></span>
 </div>
-
+<p style="font-size: 0px;">    o </p> <!--Tempory fix for a part not getting blureed -->
 </section>
 
 <?php include '../attachedSections/footer.php'; ?>
