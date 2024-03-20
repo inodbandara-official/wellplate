@@ -1,15 +1,3 @@
-body, html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f9fa;
-    font-family: 'Arial', sans-serif;
-    background-image: url('../images/background.jpg');/* Updated to your image file */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-}
 
 .container {
     background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for the container */
@@ -19,8 +7,9 @@ body, html {
 
 /* Base table styles */
 .table {
-    width: 80%; /* Adjust the width as per your design */
+    width: 60%; /* Adjust the width as per your design */
     margin: 20px auto; /* Center the table */
+    margin-left: 150px;
     background-color: #ffffff; /* White background */
     border-collapse: separate; /* Use separate border collapsing model */
     border-spacing: 0; /* No spacing between borders */
