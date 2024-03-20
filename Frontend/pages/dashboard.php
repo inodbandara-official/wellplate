@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weekly Meal Plan</title>
-    <link rel="stylesheet" type="text/css" href="../assets/css/navbar.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="../assets/css/generateMealPlan.css">
-    <link rel="stylesheet" href="../assets/css/dashboard.css">
-    <link rel="stylesheet" href="../assets/css/navbadr.css">
-    <link rel="stylesheet" href="../assets/css/footer.css">
-    <link rel="stylesheet" href="../assets/css/mealPlan.css">
-    
-</head>
-<body>
-    <?php
+<?php
         include 'connect.php';
         session_start();
 
@@ -39,6 +23,40 @@
         }
         ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Meal Plan</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/navbar.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="../assets/css/generateMealPlan.css">
+    <link rel="stylesheet" href="../assets/css/Dashboard.css">
+    <link rel="stylesheet" href="../assets/css/navbadr.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/mealPlan.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('../assets/images/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .home-section {
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            backdrop-filter: blur(20px);
+            background-color: rgba(255, 255, 255, 0.01);
+            text-align: center;
+        }
+    </style>
+    
+</head>
+<body>
 
     <?php include '../attachedSections/navbar.php'; ?>
 
@@ -75,12 +93,12 @@ include 'connect.php';
      // Start the table with Bootstrap classes for styling
 
      echo '<table class="table table-striped table-bordered table-hover">';
-     echo "<thead class='thead-dark'>    <tr>    <th>ID</th>     <th>Name</th>   <th>Email</th>      </tr></thead>";
+     echo "<thead class='thead-dark'>    <tr>  <th>Date</th>   <th>Blood Sugar Level</th>      </tr></thead>";
      echo "<tbody>";
      // Output data of each row
 
      while($row = $result->fetch_assoc()) {
-         echo "<tr>".      "<td>".$row["userID"]."</td>".     "<td>".$row["username"]."</td>".   "<td>".$row["email"]."</td>".   "</tr>";
+         echo "<tr>".   "<td>".$row["Date"]."</td>".   "<td>".$row["Blood_Sugar_Level"]."</td>".   "</tr>";
      } // change column names according to ur data
 
      echo "</tbody></table>";
