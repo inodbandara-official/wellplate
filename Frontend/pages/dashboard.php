@@ -1,27 +1,44 @@
 <?php
-        include 'connect.php';
-        session_start();
+include 'connect.php';
+session_start();
 
-        if (!isset($_SESSION['user_email'])) {
-            header("location: login.php");
-            exit();
-        }
+if (!isset($_SESSION['user_email'])) {
+    header("location: login.php");
+    exit();
+}
 
-        $userEmail = $_SESSION['user_email'];
-        $sql = "SELECT * FROM users WHERE Email=?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("s", $userEmail);
-        $stmt->execute();
-        $result = $stmt->get_result();
+$userEmail = $_SESSION['user_email'];
+$sql = "SELECT * FROM users WHERE Email=?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $userEmail);
+$stmt->execute();
+$result = $stmt->get_result();
 
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            $userName = $row['First_Name'] . ' ' . $row['Last_Name'];
-        } else {
-            header("location: login.php");
-            exit();
-        }
-        ?>
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $userName = $row['First_Name'] . ' ' . $row['Last_Name'];
+} else {
+    header("location: login.php");
+    exit();
+    }
+
+$userEmail = $_SESSION['user_email'];
+
+// SQL query to fetch the highest and latest recorded blood sugar levels for the current user
+$sql = "SELECT MAX(Blood_Sugar_Level) AS highest_level, MAX(Date) AS latest_date FROM userdata WHERE Email = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $userEmail);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $highestLevel = $row['highest_level'];
+    $latestDate = $row['latest_date'];
+    
+}    
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -70,7 +87,7 @@
             <div class="card">
                 <div class="card-body">
                     <h4>Blood Sugar Levels</h4>
-                    <p>Highest Recorded :</p>
+                    <p>Highest Recorded : <span style="color: #fff;"><?php echo $highestLevel; ?></span> </p>
                     <p>Latest Recorded :</p>                   
                 </div>
             </div>
@@ -79,34 +96,38 @@
 
 include 'connect.php';
 
- // Check connection
- if ($conn->connect_error) {
-     die("Connection failed: " . $conn->connect_error);
- }
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
- // SQL query to fetch data
- $sql = "SELECT * FROM userdata";  // chnage userdata to the name of the table
- $result = $conn->query($sql);
+// Get the current user's email from the session
+$userEmail = $_SESSION['user_email'];
 
- // Check if any rows were returned
- if ($result->num_rows > 0) {
-     // Start the table with Bootstrap classes for styling
+// SQL query to fetch data for the current user
+$sql = "SELECT Date, Blood_Sugar_Level FROM userdata WHERE Email = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $userEmail);
+$stmt->execute();
+$result = $stmt->get_result();
 
-     echo '<table class="table table-striped table-bordered table-hover">';
-     echo "<thead class='thead-dark'>    <tr>  <th>Date</th>   <th>Blood Sugar Level</th>      </tr></thead>";
-     echo "<tbody>";
-     // Output data of each row
+// Check if any rows were returned
+if ($result->num_rows > 0) {
+    // Start the table with Bootstrap classes for styling
+    echo '<table class="table table-striped table-bordered table-hover">';
+    echo "<thead class='thead-dark'>    <tr>  <th>Date</th>   <th>Blood Sugar Level</th>      </tr></thead>";
+    echo "<tbody>";
+    // Output data of each row
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>".   "<td>".$row["Date"]."</td>".   "<td>".$row["Blood_Sugar_Level"]."</td>".   "</tr>";
+    } 
+    echo "</tbody></table>";
+} else {
+    echo "0 results";
+}
 
-     while($row = $result->fetch_assoc()) {
-         echo "<tr>".   "<td>".$row["Date"]."</td>".   "<td>".$row["Blood_Sugar_Level"]."</td>".   "</tr>";
-     } // change column names according to ur data
-
-     echo "</tbody></table>";
- } else {
-     echo "0 results";
- }
-
- $conn->close();
+$stmt->close();
+$conn->close();
 ?>
     </section>
 
