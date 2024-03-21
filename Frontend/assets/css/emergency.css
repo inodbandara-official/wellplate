@@ -6,47 +6,62 @@
 body { 
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
+#homesection {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    background-color: #ffffff03;
+}
+
+#whitesection {
+    background-color: #ffffff;
+    margin-left: 100px;
+    margin-right: 100px;
+    border-radius: 50px;
+}
 
 /* Description section styles */
 #des {
-    word-spacing: 2px;
-    line-height: 1.6;
-    text-align: justify;
-    color: black;
-    margin-top: 5px;
-    padding: 2px 50px 50px;
-}
-
-#des h1 {
-    margin-top: 2px;
+    font-size: 40px;
     text-align: center;
-    color: navy;
-   
+    color: #000080;
+    
 }
 
 #contacts {
-    margin-left: 600px;
-    font-size: 20px;
+    text-align: center;
+    font-size: 30px;
+    color: #000000;
+    word-spacing: 2px;
+    line-height: 1.6;
 }
 
 /* Image styles */
 #image img {
-    height: 700px;
+    height: 900px;
+    width: 1700px;
+    border-radius: 50px;
     display: block;    
     margin-left: auto;
     margin-right: auto;
 }
 
-#content h1 {
-    font-size: 100px;
-    color: #165397;
+#content {
+    font-size: 150px;
+    color: #1a2e5c;
+    text-shadow: 0 0 3px;
     text-align: center;
     margin-top: 30px;
 }
 
-#content h1:hover {
+#content :hover {
     color: #000000;
 }
   
