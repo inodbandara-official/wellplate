@@ -24,8 +24,8 @@ if ($result->num_rows > 0) {
 
 $userEmail = $_SESSION['user_email'];
 
-// SQL query to fetch the highest and latest recorded blood sugar levels for the current user
-$sql = "SELECT MAX(Blood_Sugar_Level) AS highest_level, MAX(Date) AS latest_date FROM userdata WHERE Email = ?";
+// SQL query to fetch the highest recorded blood sugar level for the current user
+$sql = "SELECT MAX(Blood_Sugar_Level) AS highest_level FROM userdata WHERE Email = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $userEmail);
 $stmt->execute();
@@ -34,8 +34,17 @@ $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $highestLevel = $row['highest_level'];
-    $latestDate = $row['latest_date'];
-    
+}  
+
+$sql = "SELECT Blood_Sugar_Level FROM userdata WHERE Email = ? ORDER BY Date DESC LIMIT 1";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $userEmail);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $lastBloodSugarLevel = $row['Blood_Sugar_Level'];
 }    
 
 ?>
@@ -88,7 +97,7 @@ if ($result->num_rows > 0) {
                 <div class="card-body">
                     <h4>Blood Sugar Levels</h4>
                     <p>Highest Recorded : <span style="color: #fff;"><?php echo $highestLevel; ?></span> </p>
-                    <p>Latest Recorded :</p>                   
+                    <p>Latest Recorded : <span style="color: #fff;" ><?php echo $lastBloodSugarLevel; ?></span></p>                   
                 </div>
             </div>
         </div>
