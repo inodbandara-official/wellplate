@@ -48,14 +48,12 @@ def map_blood_sugar_to_glycemic_index(blood_sugar_level):
 
 def get_recommendations(allergies=None, is_vegetarian=False, blood_sugar_level=None, cheat_day=False):
     if blood_sugar_level is None:
-        print("Blood sugar level is required.")
-        return
+        return "Blood sugar level is required."
 
     try:
         blood_sugar_level = float(blood_sugar_level)  # Convert to float
     except ValueError:
-        print(f"Invalid blood sugar level value: {blood_sugar_level}")
-        return
+        return f"Invalid blood sugar level value: {blood_sugar_level}"
 
     glycemic_index = map_blood_sugar_to_glycemic_index(blood_sugar_level)
 
@@ -85,9 +83,12 @@ def get_recommendations(allergies=None, is_vegetarian=False, blood_sugar_level=N
     days_of_week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
     meal_recommendations = {}
 
+    recommendations = []
     for day in days_of_week:
         if cheat_day and day == 'Saturday':
-            print("Enjoy Your Cheat Day!")
+            recommendations.append(f"{day}:")
+            recommendations.append("  Enjoy Your Cheat Day!")
+            recommendations.append("")
             meal_recommendations[day] = "Cheat Day"
             continue
 
@@ -123,17 +124,18 @@ def get_recommendations(allergies=None, is_vegetarian=False, blood_sugar_level=N
             'Dinner': dinner_recommendations
         }
 
-    for day, meals in meal_recommendations.items():
-        if cheat_day and day == 'Saturday':
-            print(meals)
-        else:
-            print(f"{day}:")
-            for meal, food_names in meals.items():
-                print(f"  {meal}:")
+        if not cheat_day or day != 'Saturday':
+            recommendations.append(f"{day}:")
+            recommendations.append("")
+            for meal, food_names in meal_recommendations[day].items():
+                recommendations.append(f"  {meal}:")
                 for food_name in food_names:
-                    print(f"    {food_name}")
+                    recommendations.append(f"    {food_name}")
+                recommendations.append("")
+            recommendations.append("")
 
-get_recommendations(allergies='Avacado', is_vegetarian=True, blood_sugar_level='100', cheat_day=True)
+    recommendations = '\n'.join(recommendations)
+    return recommendations
 
+# Save the model to a file
 joblib.dump(model, 'logistic_regression_model.joblib')
-
