@@ -24,6 +24,9 @@ if ($result->num_rows > 0) {
 
 $userEmail = $_SESSION['user_email'];
 
+$highestLevel = "No data";
+$lastBloodSugarLevel = "No data";
+
 // SQL query to fetch the highest recorded blood sugar level for the current user
 $sql = "SELECT MAX(Blood_Sugar_Level) AS highest_level FROM userdata WHERE Email = ?";
 $stmt = $conn->prepare($sql);
