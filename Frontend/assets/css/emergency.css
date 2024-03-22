@@ -37,7 +37,7 @@ body {
 
 #contacts {
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
     color: #000000;
     word-spacing: 2px;
     line-height: 1.6;
@@ -46,7 +46,7 @@ body {
 /* Image styles */
 #image img {
     height: 900px;
-    width: 1700px;
+    width: 1400px;
     border-radius: 50px;
     display: block;    
     margin-left: auto;
@@ -54,7 +54,7 @@ body {
 }
 
 #content {
-    font-size: 150px;
+    font-size: 125px;
     color: #1a2e5c;
     text-shadow: 0 0 3px;
     text-align: center;
@@ -65,3 +65,48 @@ body {
     color: #000000;
 }
   
+.footer{
+    background-color: #004f83;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    padding-top: 20PX;
+    top:0;
+    /* left:78px; */
+    width: 100%;
+    transition: all .5s ease;
+    z-index: 2;
+    bottom: 0;
+}
+  
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+  
+.footer-logo i {
+    font-size: 24px;
+    margin-right: 5px;
+}
+  
+.footer-links a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 15px;
+    font-size: 14px;
+}
+  
+.footer-bottom {
+    margin-top: 15px;
+}
+  
+.footer-bottom p {
+    font-size: 12px;
+}
