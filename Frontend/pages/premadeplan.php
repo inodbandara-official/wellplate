@@ -29,6 +29,7 @@
 <body>
     
     <section class="home-section">
+        <p style="font-size: 0px;">0</p>
     <h1>Weekly Meal Plan</h1>
 
     <div class="meal-card">
