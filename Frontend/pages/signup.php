@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $password = $_POST["password"];
 
-    // Validate and sanitize data (you should implement more robust validation)
+    // Validate and sanitize data 
     $firstName = htmlspecialchars(trim($firstName));
     $lastName = htmlspecialchars(trim($lastName));
     $age = htmlspecialchars(trim($age));
@@ -20,9 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = filter_var($email, FILTER_SANITIZE_EMAIL);
     $password = htmlspecialchars(trim($password));
 
-    // Perform additional validation and checks if needed
-
-    // Insert user data into the database without hashing the password
+    // Insert user data into the database without hashing the password ( i tried didn't work. Try again if have time)
     $sql = "INSERT INTO users (First_Name, Last_Name, Age, Mobile_Number, Email, Password) 
         VALUES ('$firstName', '$lastName', '$age', '$mobileNumber', '$email', '$password')";
 
