@@ -1,0 +1,115 @@
+ /* Global styles */
+* {
+    box-sizing: border-box;
+}
+
+body { 
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#homesection {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    background-color: #ffffff03;
+}
+
+#whitesection {
+    background-color: #ffffff;
+    margin-left: 100px;
+    margin-right: 100px;
+    border-radius: 50px;
+}
+
+/* Description section styles */
+#des {
+    font-size: 40px;
+    text-align: center;
+    color: #000080;
+    
+}
+
+#contacts {
+    text-align: center;
+    font-size: 18px;
+    color: #000000;
+    word-spacing: 2px;
+    line-height: 1.6;
+}
+
+/* Image styles */
+#image img {
+    height: 900px;
+    width: 1300px;
+    border-radius: 50px;
+    display: block;    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#content {
+    font-size: 125px;
+    color: #1a2e5c;
+    text-shadow: 0 0 3px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#content :hover {
+    color: #000000;
+}
+
+#doctor {
+    font-size: 26px;
+}
+  
+.footer{
+    background-color: #004f83;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    /* padding-top: 20PX; */
+    top:0;
+    width: 100%;
+    transition: all .5s ease;
+    z-index: 2;
+    bottom: 0;
+}
+  
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+  
+.footer-logo i {
+    font-size: 24px;
+    margin-right: 5px;
+}
+  
+.footer-links a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 15px;
+    font-size: 14px;
+}
+  
+.footer-bottom {
+    margin-top: 15px;
+}
+  
+.footer-bottom p {
+    font-size: 12px;
+}
