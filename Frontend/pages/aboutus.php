@@ -41,7 +41,7 @@
       </section>
     <div class="creator-container">
       <div class="creator">
-        <div class="creator-image-container"><img src="../assets/images/profile.jpg" alt="Inod Bandara"></div>
+        <div class="creator-image-container"><img src="../assets/images/inod.jpg" alt="Inod Bandara"></div>
         <h2>Inod Bandara</h2>
         <p>Hello, I'm Inod. and also leader of this project.</p>
       </div>
