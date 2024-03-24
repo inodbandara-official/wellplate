@@ -32,7 +32,7 @@
         <h3>Empowering your well-being through personalized nutrion Choices.<br>Personalized recommendation and a roadmap to a brighter future all within reach at you fingertips.</h3>
     </div>
 
-<button class="start" type="button" onclick="location.href='pages/premadeplan.html'">Premade Meal Plans</button>
+<button class="start" type="button" onclick="location.href='pages/premadeplan.php'">Premade Meal Plans</button>
 
 <footer class="footer">
   <div class="footer-content">
