@@ -75,9 +75,8 @@ body {
     padding: 20px;
     text-align: center;
     position: relative;
-    padding-top: 20PX;
+    /* padding-top: 20PX; */
     top:0;
-    /* left:78px; */
     width: 100%;
     transition: all .5s ease;
     z-index: 2;
