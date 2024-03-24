@@ -28,13 +28,6 @@
             <span class="tooltip">View Meal Plan</span>
           </li>
           <li>
-            <a href="tracker.html">
-              <i class="bx bx-pie-chart-alt-2"></i>
-              <span class="link_name">Progress Tracker</span>
-            </a>
-            <span class="tooltip">Progress Tracker</span>
-          </li>
-          <li>
             <a href="login.php">
               <i class="bx bx-log-out"></i>
               <span class="link_name">Log Out</span>
