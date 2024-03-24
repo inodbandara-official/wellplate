@@ -4,7 +4,7 @@ include 'connect.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve and validate form data
     $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
-    $oldPassword = htmlspecialchars($_POST['old_password']);
+    $mobileNumber = htmlspecialchars($_POST['mobile_number']);
     $newPassword = htmlspecialchars($_POST['new_password']);
     $confirmPassword = htmlspecialchars($_POST['confirm_password']);
 
@@ -34,12 +34,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $stmtSelect->get_result();
 
     if ($result->num_rows > 0) {
-        // User found, check the old password
+        // User found, check the Mobile Number
         $row = $result->fetch_assoc();
-        $storedPassword = $row['Password']; // Stored in plain text
+        $storedMobileNumber = $row['Mobile_Number']; // Stored in plain text
 
-        if ($oldPassword == $storedPassword) {
-            // Old password is correct, update the password
+        if ($mobileNumber == $storedMobileNumber) {
+            // Mobile Number is correct, update the password
             $updateSql = "UPDATE `users` SET `Password`=? WHERE `Email`=?";
             $stmtUpdate = $conn->prepare($updateSql);
             $stmtUpdate->bind_param("ss", $newPassword, $email);
@@ -51,9 +51,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </script>';
             exit();
         } else {
-            // Incorrect old password, display an alert and redirect to forgotpw.php
+            // Incorrect mobile number, display an alert and redirect to forgotpw.php
             echo '<script> 
-                alert("Invalid old password");
+                alert("Invalid Mobile Number");
                 window.location.href="forgotpw.php";
             </script>';
             exit();
@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <i class='bx bxs-envelope'></i>
             </div>
             <div class="input-box">
-                <input type="password" name="old_password" placeholder="Old Password" required>
+                <input type="password" name="mobile_number" placeholder="Mobile Number" required>
                 <i class='bx bxs-lock-alt' ></i>
             </div>
             <div class="input-box">

@@ -1,0 +1,114 @@
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for the container */
+    border-radius: 5px;
+    padding: 20px;
+}
+
+/* Base table styles */
+.table {
+    width: 60%; /* Adjust the width as per your design */
+    margin: 20px auto; /* Center the table */
+    margin-left: 150px;
+    background-color: #ffffff; /* White background */
+    border-collapse: separate; /* Use separate border collapsing model */
+    border-spacing: 0; /* No spacing between borders */
+    border-radius: 10px; /* Rounded corners for the table */
+    overflow: hidden; /* Hide overflow to respect the border-radius */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Box-shadow for 3D effect */
+}
+
+/* Table header styles */
+.table th {
+    background-color: #004f83; /* Dark background for header */
+    color: white; /* White text for header */
+    padding: 12px; /* Add more padding for table cells */
+    text-align: left; /* Align text to the left */
+    border-bottom: 1px solid #ddd; /* Light grey border for header bottom */
+}
+
+/* Table body styles */
+.table td {
+    text-align: left; /* Align text to the left */
+    padding: 12px; /* Add more padding for table cells */
+    border-bottom: 1px solid #ddd; /* Light grey border for cells */
+}
+
+/* Zebra striping for odd rows and hover effect */
+.table tbody tr:nth-child(odd) {
+    background-color: #f2f2f2; /* Zebra striping for odd rows */
+}
+
+.table tbody tr:hover {
+    background-color: #ddd; /* Hover effect for table rows */
+}
+
+/* Add rounded corners to the first and last cells in each row */
+.table tbody tr:first-child td:first-child,
+.table th:first-child {
+    border-top-left-radius: 10px; /* Rounded top-left corner */
+}
+
+.table tbody tr:first-child td:last-child,
+.table th:last-child {
+    border-top-right-radius: 10px; /* Rounded top-right corner */
+}
+
+.table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px; /* Rounded bottom-left corner */
+}
+
+.table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px; /* Rounded bottom-right corner */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .table {
+        width: 100%; /* Full width on smaller screens */
+    }
+}
+
+
+
+h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.275rem;
+    color: #fff;
+}
+.content {
+    display: flex;
+    justify-content: center;
+    margin-right: 150px;
+}
+.card {
+    flex-basis: 35%;
+    background-color: #004f83;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+    overflow: hidden;
+    width: calc(35% - 1rem); /* Adjust as needed */
+    margin-right: 1rem; /* Adjust as needed */
+    margin-top: 20px;
+}
+.illustration {
+    background-color: #004f83;
+    color: #fff;
+    padding: 20px;
+}
+.illustration-img {
+    max-width: 150px;
+    width: 100%;
+}
+.card-body {
+    padding: 20px;
+}
+.home-section {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    background-color: rgba(255, 255, 255, 0.01);
+    text-align: center;
+}
