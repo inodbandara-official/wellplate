@@ -21,7 +21,7 @@
         </div>
         <h1>Well Plate</h1>
         <div class="Access">
-            <button class="ebutton"><a href="pages/EmergencyContacts.html">Emergency Contact</a></button>
+            <button class="ebutton"><a href="pages/EmergencyContacts.php">Emergency Contact</a></button>
             <button class="Access-btn1"><a href="pages/login.php">Log In</a></button>
             <button class="Access-btn2"><a href="pages/signup.php">Sign Up</a></button>
         </div>
@@ -43,7 +43,7 @@
     <div class="footer-links">
       <a href="#">Privacy Policy</a>
       <a href="#">Terms of Service</a>
-      <a href="#">Contact Us</a>
+      <a href="./pages/aboutus.php">Contact Us</a>
     </div>
   </div>
   <div class="footer-bottom">
