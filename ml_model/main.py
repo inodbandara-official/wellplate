@@ -6,6 +6,7 @@ from sklearn.preprocessing import LabelEncoder
 import random
 from sklearn.metrics import accuracy_score
 import joblib
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, mean_squared_error, mean_absolute_error
 
 df_food = pd.read_csv("C:\\Users\\Kamal\\PycharmProjects\\1 programme\\pred_food.csv")
 df_food['Glycemic Index'] = pd.to_numeric(df_food['Glycemic Index'], errors='coerce')
@@ -27,7 +28,26 @@ model.fit(X_train, y_train)
 
 y_pred = model.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
-#print(f"Model accuracy: {accuracy * 100:.2f}%")
+
+'''def evaluate_model(model, X_test, y_test):
+    y_pred = model.predict(X_test)
+    precision = precision_score(y_test, y_pred, average='weighted')
+    recall = recall_score(y_test, y_pred, average='weighted')
+    f1 = f1_score(y_test, y_pred, average='weighted')
+    mse = mean_squared_error(y_test, y_pred)
+    mae = mean_absolute_error(y_test, y_pred)
+
+    print(f"Precision: {precision:.2f}")
+    print(f"Recall: {recall:.2f}")
+    print(f"F1-score: {f1:.2f}")
+    print(f"Mean Squared Error (MSE): {mse:.2f}")
+    print(f"Mean Absolute Error (MAE): {mae:.2f}")
+
+print("*****MODEL EVALUATION*****")
+evaluate_model(model, X_test, y_test)
+print(f"Model accuracy: {accuracy * 100:.2f}%")
+print("**************************") '''
+
 #print(f"Number of iterations: {model.n_iter_[0]}")
 
 food_name_variations = {
